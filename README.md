@@ -2,6 +2,8 @@
 
 ### start
 ```kubectl -n kustomize -k overlay/dev```
+**or**
+```kubectl -n kustomize -k overlay/prod```
 
 ### ArgoCD start dev
 
