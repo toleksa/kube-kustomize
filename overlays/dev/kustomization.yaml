@@ -5,5 +5,10 @@ bases:
 - ../../base
 
 patchesStrategicMerge:
-- ingress-fqdn.yaml
 - deployment-replicas.yaml
+
+patches:
+- path: ingress-fqdn.yaml
+  target:
+    kind: Ingress
+    name: kustomize-ingress
