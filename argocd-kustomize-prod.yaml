@@ -14,4 +14,8 @@ spec:
     path: overlays/prod
     targetRevision: HEAD
   syncPolicy:
-    automated: null
+    automated: 
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+
