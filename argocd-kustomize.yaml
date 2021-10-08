@@ -6,7 +6,6 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    name: kustomize
     namespace: kustomize
     server: 'https://kubernetes.default.svc'
   source:
