@@ -11,7 +11,7 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/toleksa/kube-kustomize.git'
-    path: overlays/prod
+    path: overlays/dev
     targetRevision: HEAD
   syncPolicy:
     automated: null
