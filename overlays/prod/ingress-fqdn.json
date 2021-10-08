@@ -1,7 +1,7 @@
 [
     {
         "op": "replace", 
-        "path": "/", 
+        "path": "/spec/rules/0/host", 
         "value": "kustomize.prod.ac" 
     }
 ]

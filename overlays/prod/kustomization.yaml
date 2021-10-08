@@ -8,8 +8,8 @@ patchesStrategicMerge:
 - deployment-replicas.yaml
 
 patches:
-- target:
+- path: ingress-fqdn.yaml
+  target:
     kind: Ingress
     name: kustomize-ingress
-  path: ingress-fqdn.json
 
