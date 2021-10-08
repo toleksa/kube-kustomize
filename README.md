@@ -1,11 +1,13 @@
 # kube-kustomize
 
 ### start
-```kubectl apply -f argocd-kustomize-dev.yaml```
-
 ```kubectl -n kustomize -k overlay/dev```
 
-### switch to prod
+### ArgoCD start dev
+
+```kubectl apply -f argocd-kustomize-dev.yaml```
+
+### ArgoCD switch to prod
 ```kubectl apply -f argocd-kustomize-prod.yaml```
 
-or manually change repo path
+or manually change repo path from wui
