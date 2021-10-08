@@ -8,12 +8,10 @@ spec:
   destination:
     namespace: kustomize
     server: 'https://kubernetes.default.svc'
-  source:
-    path: overlays/dev
-    repoURL: 'https://github.com/toleksa/kube-kustomize.git'
-    targetRevision: HEAD
-    directory:
-      recurse: true
   project: default
+  source:
+    repoURL: 'https://github.com/toleksa/kube-kustomize.git'
+    path: overlays/dev
+    targetRevision: HEAD
   syncPolicy:
     automated: null
