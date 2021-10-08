@@ -1,0 +1,54 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kustomize-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: KustomizeTestApp
+  template:
+    metadata:
+      labels:
+        app: KustomizeTestApp
+    spec:
+      containers:
+      - image: nginx
+        imagePullPolicy: Always
+        name: nginx-container
+        ports:
+        - containerPort: 80
+          protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kustomize-service
+spec:
+  selector:
+    app: KustomizeTestApp
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kustomize-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: kustomize.kube.ac
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: kustomize-service
+            port: 
+              number: 80
