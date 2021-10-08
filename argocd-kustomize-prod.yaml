@@ -1,0 +1,17 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kustomize
+  namespace: argocd
+spec:
+  destination:
+    namespace: kustomize
+    server: 'https://kubernetes.default.svc'
+  project: default
+  source:
+    repoURL: 'https://github.com/toleksa/kube-kustomize.git'
+    path: overlays/prod
+    targetRevision: HEAD
+  syncPolicy:
+    automated: null
