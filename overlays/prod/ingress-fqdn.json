@@ -1,5 +1,7 @@
 [
-    { 
-        "value": "kustomize.prod.ac"
+    {
+        "op": "replace", 
+        "path": "/", 
+        "value": "kustomize.prod.ac" 
     }
 ]
